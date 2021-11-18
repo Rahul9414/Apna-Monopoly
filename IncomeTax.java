@@ -4,4 +4,5 @@ public class IncomeTax extends Square{
     }
 
     //deduct 200 from players account
+    
 }

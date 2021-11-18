@@ -13,7 +13,7 @@ public class Tickets {
             "Indiana Avenue", "Atlantic Avenue", "Water Works", "Go To Jail", "Pacific Avenue", "Park Place",
             "Luxary Tax" };
     prices = new int[] { 0, 60, 0, 200, 100, 0, 0, 140, 0, 200, 0, 0, 220, 260, 150, 0, 300, 350, 0 };
-    rents = new int[] { 0, 6, 0, 20, 10, 0, 0, 14, 0, 20, 0, 0, 22, 26, 15, 0, 30, 35, 0 }; // have to                                                                                          
+    rents = new int[] { 0, 18, 0, 60, 30, 0, 0, 42, 0, 60, 0, 0, 66, 78, 45, 0, 90, 105, 0 }; // have to                                                                                          
     }
 
     public void SquareObjectInjection(){
