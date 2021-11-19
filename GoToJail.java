@@ -4,4 +4,8 @@ public class GoToJail extends Square {
 	}
 
     //50 will be deducted from the players account
+	public void task (Players p){
+		System.out.println("The player's position is now changed to Jail");
+		p.modifiedPosition(5);
+	}
 }

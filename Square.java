@@ -20,5 +20,6 @@ public abstract class Square {
     public int getRent() {
         return rent;
     }
+    abstract public void task(Players p);
 
 }

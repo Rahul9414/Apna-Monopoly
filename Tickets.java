@@ -1,11 +1,10 @@
 import java.util.*;
-import java.io.*;
 public class Tickets {
     String[] names;
     int[] prices;
     int[] rents;
-    static Square[] squares=new Square[19];
-    static HashMap<String, Integer> PlayerProperties=new HashMap<>();
+    static Square[] squares=new Square[19]; //this array is to store all the tickets
+    static HashMap<String, Integer> PlayerProperties=new HashMap<>(); //this is for storing which ticket is owned by which player
 
     public Tickets(){
     names = new String[] { "GO", "Baltic Avenue", "Income Tax", "Rail Road", "Vermont Avenue", "Jail",
@@ -15,9 +14,8 @@ public class Tickets {
     prices = new int[] { 0, 60, 0, 200, 100, 0, 0, 140, 0, 200, 0, 0, 220, 260, 150, 0, 300, 350, 0 };
     rents = new int[] { 0, 18, 0, 60, 30, 0, 0, 42, 0, 60, 0, 0, 66, 78, 45, 0, 90, 105, 0 }; // have to                                                                                          
     }
-
     public void SquareObjectInjection(){
-        for(int i = 0;i<names.length;i++)
+        for(int i = 0;i<names.length;i++)//by this loop we are filling the board
             {
                 if (i == 0) {
                     squares[i] = new GoSquare(names[i], prices[i], rents[i]);
@@ -52,10 +50,9 @@ public class Tickets {
                 }
             }
     }
-    
+    // this function is checking that the given ticket is already purchased or not
     public static int isPurchasedStatus(Square objSquare){
-        return new Tickets().PlayerProperties.get(objSquare.name);
+        return Tickets.PlayerProperties.get(objSquare.name);
     }
-
     }
  

@@ -1,4 +1,3 @@
-
 public class Board {
     private String name; // name of the place where player reaches
     private int price; // price a player has to pay when he reaches to a new location

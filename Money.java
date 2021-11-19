@@ -1,4 +1,4 @@
-public class Money {
+public class Money { //this class handels all the operations related to players money
 	int money;
 	
 	public Money() {
