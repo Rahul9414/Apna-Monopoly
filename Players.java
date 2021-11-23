@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class Players extends Money{
-    ArrayList<String> property; //this will store what are the property a plater owns
+    ArrayList<String> property; //this will store what are the property a player owns
     String name; //in this we are going to store the name of player
     public int currentPosition; //this variable is to store the current position of the player
 
