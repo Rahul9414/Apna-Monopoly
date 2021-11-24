@@ -40,18 +40,13 @@ public class PlayerThread1 extends Thread {
                                 System.out.println(objplayers.name + " has come to "+ objSquare.name);
                                 objSquare.task(objplayers);
                             }
-                            else if(objSquare.name.equals("Rail Road")){
-                                System.out.println(objplayers.name + " has come to "+ objSquare.name);
-                            }
                             else if(objSquare.name.equals("Jail")){
                                 System.out.println(objplayers.name + " has come to "+ objSquare.name);
+                                objSquare.task(objplayers);
                             }
                             else if(objSquare.name.equals("Go Square")){
                                 System.out.println(objplayers.name + " has come to "+ objSquare.name);
                                 objSquare.task(objplayers);
-                            }
-                            else if(objSquare.name.equals("Utility")){
-                                System.out.println(objplayers.name + " has come to "+ objSquare.name);
                             }
                             else if(objSquare.name.equals("Free Parking")){
                                 System.out.println(objplayers.name + " has come to "+ objSquare.name);
@@ -64,7 +59,7 @@ public class PlayerThread1 extends Thread {
                                 System.out.println(objplayers.name + " has come to "+ objSquare.name);
                                 objSquare.task(objplayers);
                             }
-                            else{
+                            else{//he has reached a buyable property
                                 System.out.println(objplayers.name + " has come to "+ objSquare.name);
                                 objplayers.substractMoney(objSquare.price); 
                                 Tickets.PlayerProperties.put(objSquare.name, Main.currentStatus);
@@ -72,11 +67,16 @@ public class PlayerThread1 extends Thread {
                         }
                     }
                     else{ 
-                        if(objplayers.money>=objSquare.rent){//he is going to pay rent
+                        if(objSquare.name.equals("Electric Company")? objplayers.money>=4*dieFace: objplayers.money>=objSquare.rent){//he is going to pay rent
                             System.out.println(objplayers.name + " is going to pay rent for " + objSquare.name + " to " + Main.players.get(propertyOwner-1).getName());
-                            objplayers.substractMoney(objSquare.rent); 
-                            // System.out.println(objplayers.getMoney()+ " is the current funds");
-                            Main.players.get(propertyOwner-1).addMoney(objSquare.rent); //the rent will get added to that players account who owns the property 
+                            if(objSquare.name.equals("Electric Company")){ //if player has come to electric company then money subtracted should be equal to 4 times of the distance he/she has travelled to come to electric company
+                                objplayers.substractMoney(4*dieFace);
+                                Main.players.get(propertyOwner-1).addMoney(4*dieFace); //the rent will get added to that players account who owns the property
+                            }
+                            else{
+                                objplayers.substractMoney(objSquare.rent);
+                                Main.players.get(propertyOwner-1).addMoney(objSquare.rent); //the rent will get added to that players account who owns the property
+                            }
                         }
                         else{ //if he can't pay rent as well then we are going to stop all the threads
                             System.out.println(objplayers.name + " has neither money to pay rent nor buy property");

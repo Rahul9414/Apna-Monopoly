@@ -8,7 +8,7 @@ public class IncomeTax extends Square{
     public void task (Players p){
 		this.p = p;
         System.out.println("Pay Income Tax of 100");
-        p.substractMoney(100);
+        p.substractMoney(50);
 	}
     
 }

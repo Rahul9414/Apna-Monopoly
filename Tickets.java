@@ -11,8 +11,8 @@ public class Tickets {
             "Electric Company", "States Avenue", "Community Chest", "New York Avenue", "Free Parking", "Chance",
             "Indiana Avenue", "Atlantic Avenue", "Water Works", "Go To Jail", "Pacific Avenue", "Park Place",
             "Luxary Tax" };
-    prices = new int[] { 0, 60, 0, 200, 100, 0, 0, 140, 0, 200, 0, 0, 220, 260, 150, 0, 300, 350, 0 };
-    rents = new int[] { 0, 18, 0, 60, 30, 0, 0, 42, 0, 60, 0, 0, 66, 78, 45, 0, 90, 105, 0 }; // have to                                                                                          
+    prices = new int[] { 0, 60, 0, 200, 100, 0, 150, 140, 0, 200, 0, 0, 220, 260, 150, 0, 300, 350, 0 };
+    rents = new int[] { 0, 18, 0, 60, 30, 0, 45, 42, 0, 60, 0, 0, 66, 78, 45, 0, 90, 105, 0 };                                                                                          
     }
     public void SquareObjectInjection(){
         for(int i = 0;i<names.length;i++)//by this loop we are filling the board
