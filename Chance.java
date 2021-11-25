@@ -8,22 +8,22 @@ public class Chance extends Square{
 	}
 	
 	public void task (Players p){
-		chanceCards.add(new Cards("Charges for street repairs ", 50));
-		chanceCards.add(new Cards("Pay school fees of ", 50));
-		chanceCards.add(new Cards("Drunk in charge fine. Pay ", 50));
+		chanceCards.add(new Cards("Advance to Go Square", 0));
+		chanceCards.add(new Cards("It is your birthday. Collect ", 70));
+		chanceCards.add(new Cards("From sale of stock you get ",50));
 		chanceCards.add(new Cards("Speeding charge fine. Pay ",50));
 		chanceCards.add(new Cards("You have won a crossword competition. Collect ", 125));
 		chanceCards.add(new Cards("Bank pays you interest. Collect ", 70));
 		Random rand = new Random();
 		int face = 1+rand.nextInt(6); //returns a random number between 1 and 6
-		Cards c = chanceCards.get(face);
-		if(face==0||face==1||face==2||face==3){
-			System.out.println(c.statement+c.amount);
-			p.substractMoney(c.amount);
+		Cards objCards = chanceCards.get(face-1);
+		if((face-1)==0){
+			System.out.println(objCards.statement);
+			p.updatePosition(0);
 		}
 		else{
-			System.out.println(c.statement+c.amount);
-			p.addMoney(c.amount);
+			System.out.println(objCards.statement+objCards.amount);
+			p.addMoney(objCards.amount);
 		}
 
 	}

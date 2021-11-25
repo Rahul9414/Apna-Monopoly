@@ -3,8 +3,9 @@ public class Jail extends Square{
     public Jail(String name, int price, int rent) {
 		super(name, price, rent);
 	}
-	public void task (Players p){
+	public void task (Players p){ //we have done a simple implementation of jail.
 		this.p = p;
-        p.substractMoney(50);
+		System.out.println("75 will be deducted from the "+ p.getName()+" funds.");
+        p.substractMoney(75);
 	}
 }

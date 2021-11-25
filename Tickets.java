@@ -26,7 +26,7 @@ public class Tickets {
                 } else if (i == 5) {
                     squares[i] = new Jail(names[i], prices[i], rents[i]);
                     PlayerProperties.put(squares[i].name,0);
-                } else if (i == 6) {
+                } else if (i == 6) { //isko hatana hai
                     squares[i] = new Utility(names[i], prices[i], rents[i]);
                     PlayerProperties.put(squares[i].name,0);
                 } else if (i == 8) {

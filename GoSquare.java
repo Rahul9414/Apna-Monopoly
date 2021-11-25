@@ -6,6 +6,7 @@ public class GoSquare extends Square{
     // add 200 money to the players account
     public void task (Players p){ //if a player comes to Go Square then 200 will be added to players account
 		this.p = p;
-        p.addMoney(200);
+    System.out.println("20 will be added to the "+ p.getName()+ " funds");
+        p.addMoney(20);
 	}
 }

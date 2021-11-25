@@ -24,4 +24,10 @@ public class Players extends Money{
     public void modifiedPosition(int currentPosition){
         this.currentPosition=currentPosition;
     }
+
+    public void stopThreads(){
+        for(int j=0;j<Main.numberOfPlayer;j++){
+            Main.objplayerthreads[j].stop();
+        }
+    }
 }

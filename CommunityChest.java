@@ -7,22 +7,22 @@ public class CommunityChest extends Square {
 	}
 
     public void task (Players p){
-		communityChestCards.add(new Cards("Pay hospital ", 50));
-		communityChestCards.add(new Cards("Doctor's fee. Pay ", 50));
-		communityChestCards.add(new Cards("Pay your insurance premium. ", 50));
+		communityChestCards.add(new Cards("Go to free parking", 0));
+		communityChestCards.add(new Cards("Annuity matures. Collect ", 50));
+		communityChestCards.add(new Cards("You have won second prize in a beauty contest. Collect ", 75));
 		communityChestCards.add(new Cards("From sale of stock you get ",50));
 		communityChestCards.add(new Cards("Income tax refund. Collect ", 125));
 		communityChestCards.add(new Cards("It is your birthday. Collect  ", 70));
 		Random rand = new Random();
 		int face = 1+rand.nextInt(6); //returns a random number between 1 and 6
-		Cards c = communityChestCards.get(face);
-		if(face==0||face==1||face==2){
-			System.out.println(c.statement+c.amount);
-			p.substractMoney(c.amount);
+		Cards objCards = communityChestCards.get(face-1);
+		if((face-1)==0){
+			System.out.println(objCards.statement);
+			p.updatePosition(10);
 		}
 		else{
-			System.out.println(c.statement+c.amount);
-			p.addMoney(c.amount);
+			System.out.println(objCards.statement+objCards.amount);
+			p.addMoney(objCards.amount);
 		}
 
 	}
